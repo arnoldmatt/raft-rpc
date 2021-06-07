@@ -13,6 +13,8 @@ Then, perform the following steps to 1) build the raft-rpc image, 2) start the r
 
 # To build the raft-rpc image
 
+> gRPC build time can be quite long depending on your build machine, you can experiment with faster build times by changing the 'make -j 1' calls, in *Dockerfile*, to a higher concurrency number
+
  * [1] clone this repository into a folder (*$my_build_folder*) on your build machine
  * [2] on your build machine open a terminal and change directory to *$my_build_folder*
  * [3] run: `$ docker build -t raft-rpc-docker .`

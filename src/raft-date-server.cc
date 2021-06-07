@@ -28,11 +28,11 @@ class RaftDateServerImpl final : public raft::date::RaftDate::Service
                 end_date_seconds = request->enddate();
 
             google::protobuf::int64
-                date_diff_millis = 
+                date_diff_seconds = 
                     ( std::max(start_date_seconds, end_date_seconds) -
                       std::min(start_date_seconds, end_date_seconds) );
 
-            response->set_diffindays( ( date_diff_millis / _one_day_seconds ) );
+            response->set_diffindays( ( date_diff_seconds / _one_day_seconds ) );
 
             return grpc::Status::OK;
         }
